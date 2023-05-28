@@ -52,11 +52,11 @@ const sequelize = new Sequelize('postgres://yqbjkzhuzzezfs:5433343d3797e83769200
 
 const modelDefiners = [
     users = require('./models/users'),
-    area = require('./models/area'),
+    areas = require('./models/areas'),
     trails = require('./models/trails'),
     roles= require('./models/roles'),
     sensors = require('./models/sensors'),
-    helmet = require('./models/helmet'),
+    helmets = require('./models/helmets'),
     completed = require('./models/completed'),
     checkpoints = require('./models/checkpoints'),
     challenges = require('./models/challenges'),

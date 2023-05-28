@@ -1,5 +1,5 @@
 function applyExtraSetup(sequelize) {
-    const { users, trails, sensors, roles, helmet, completed, checkpoints, challenges, area } = sequelize.models;
+    const { users, trails, sensors, roles, helmet, completed, checkpoints, challenges, areas } = sequelize.models;
 
     roles.hasOne(users, {
         foreignKey: 'user_role_id'

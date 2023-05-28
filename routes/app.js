@@ -8,6 +8,16 @@ const bodyParser = require('body-parser');
 
 const routes = {
   users: require('./routes/usersRoutes'),
+  trails: require('./routes/trailsRoutes'),
+  sensors: require('./routes/sensorsRoutes'),
+  roles: require('./routes/rolesRoutes'),
+  helmets: require('./routes/helmetsRoutes'),
+  completed: require('./routes/completedRoutes'),
+  checkpoints: require('./routes/checkpointsRoutes'),
+  challenge: require('./routes/challengesRoutes'),
+  areas: require('./routes/areasRoutes'),
+
+
 };
 
 const app = express();
