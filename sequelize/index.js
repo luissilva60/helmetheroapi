@@ -16,6 +16,9 @@ const sequelize = new Sequelize(connectionUser, connectionDatabase, connectionPW
     benchmark: true,
     define: {
         timestamps: false
+    },
+    ssl: {
+        rejectUnauthorized: false
     }
 
 });
