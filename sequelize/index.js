@@ -18,7 +18,8 @@ const sequelize = new Sequelize(connectionUser, connectionDatabase, connectionPW
         timestamps: false
     },
     ssl: {
-        rejectUnauthorized: false
+        require: true,
+        rejectUnauthorized: false,
     }
 
 });
