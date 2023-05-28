@@ -17,9 +17,11 @@ const sequelize = new Sequelize(connectionUser, connectionDatabase, connectionPW
     define: {
         timestamps: false
     },
-    ssl: {
-        require: true,
-        rejectUnauthorized: false,
+    dialectOptions: {
+        ssl: {
+            require: true,
+            rejectUnauthorized: false,
+        },
     }
 
 });
