@@ -8,7 +8,7 @@ const connectionDatabase = "d7mqnaojamm7jr"
 
 
 
-const sequelize = new Sequelize(connectionUser, connectionDatabase, connectionPW, {
+/*const sequelize = new Sequelize(connectionUser, connectionDatabase, connectionPW, {
     host: connectionHost,
     port: connectionPort,
     dialect: 'postgres',
@@ -24,8 +24,24 @@ const sequelize = new Sequelize(connectionUser, connectionDatabase, connectionPW
         },
     }
 
-});
+});*/
 
+
+const sequelize = new Sequelize('postgres://yqbjkzhuzzezfs:5433343d3797e83769200119eda5399511d00ef9df9c7d682868e59b1d729c7e@ec2-54-76-132-202.eu-west-1.compute.amazonaws.com:5432/d7mqnaojamm7jr',{
+
+        dialect: 'postgres',
+        logQueryParameters: true,
+        benchmark: true,
+        define: {
+            timestamps: false
+        },
+        dialectOptions: {
+            ssl: {
+                require: true,
+                rejectUnauthorized: false,
+            },
+        }
+    })
 
 
 
