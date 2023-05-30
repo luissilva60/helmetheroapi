@@ -55,6 +55,10 @@ function applyExtraSetup(sequelize) {
         foreignKey: 'trail_area_id'
 
     });
+
+
+
+
     trails.belongsTo(areas ,{
         foreignKey:  'trail_area_id'
 
