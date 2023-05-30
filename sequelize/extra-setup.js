@@ -1,5 +1,5 @@
 function applyExtraSetup(sequelize) {
-    const { users, trails, sensors, roles, helmet, completed, checkpoints, challenges, areas } = sequelize.models;
+    const { users, trails, sensors, roles, helmet, completed, checkpoints, challenges, area } = sequelize.models;
 
     roles.hasOne(users, {
         foreignKey: 'user_role_id'
@@ -51,7 +51,7 @@ function applyExtraSetup(sequelize) {
 
 
 
-    areas.hasMany(trails, {
+    area.hasMany(trails, {
         foreignKey: 'trail_area_id'
 
     });
@@ -59,7 +59,7 @@ function applyExtraSetup(sequelize) {
 
 
 
-    trails.belongsTo(areas ,{
+    trails.belongsTo(area ,{
         foreignKey:  'trail_area_id'
 
     });
