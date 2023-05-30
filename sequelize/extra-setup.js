@@ -49,12 +49,14 @@ function applyExtraSetup(sequelize) {
     });
 
 
-    trails.hasMany(challenges, {
-        foreignKey: 'challenge_trail_id'
+
+
+    areas.hasMany(trails, {
+        foreignKey: 'trail_area_id'
 
     });
-    challenges.belongsTo(trails ,{
-        foreignKey:  'challenge_trail_id'
+    trails.belongsTo(areas ,{
+        foreignKey:  'trail_area_id'
 
     });
 

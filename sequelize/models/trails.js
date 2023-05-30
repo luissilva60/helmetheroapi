@@ -12,12 +12,9 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING
 
         },
-        trail_start: {
-            type: DataTypes.GEOGRAPHY('POINT')
+        trail_gps: {
+            type: DataTypes.GEOMETRY
 
-        },
-        trail_end: {
-            type: DataTypes.GEOGRAPHY('POINT')
         }
     });
 
