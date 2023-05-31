@@ -11,7 +11,7 @@ module.exports = (sequelize) => {
         challenge_name: {
             type: DataTypes.STRING
         },
-        challenge_point: {
+        challenge_points: {
             type: DataTypes.INTEGER
         },
         challenge_gps: {
