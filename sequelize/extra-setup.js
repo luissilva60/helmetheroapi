@@ -39,6 +39,15 @@ function applyExtraSetup(sequelize) {
     });
 
 
+    users.hasMany(completed, {
+        foreignKey: 'completed_user_id'
+
+    });
+    completed.belongsTo(users ,{
+        foreignKey:  'completed_user_id'
+
+    });
+
     challenges.hasMany(completed, {
         foreignKey: 'completed_challenged_id'
 

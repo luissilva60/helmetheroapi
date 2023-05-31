@@ -90,6 +90,11 @@ for (const [routeName, routeController] of Object.entries(routes)) {
         `/api/${routeName}/:id`,
         makeHandlerAwareOfAsyncErrors(routeController.getById)
     );
+  }if (routeController.getAllCompletedUser) {
+    app.get(
+        `/api/${routeName}/user/:id`,
+        makeHandlerAwareOfAsyncErrors(routeController.getAllCompletedUser)
+    );
   }
 
 }
