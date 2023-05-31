@@ -3,7 +3,9 @@ const { getIdParam } = require('../helpers');
 
 async function getAll(req, res) {
     try {
-        const allcompleted = await models.completed.findAll();
+        const allcompleted = await models.completed.findAll({
+            include: [models.trails, models.checkpoints, models.area]
+        });
         res.status(200).json(allcompleted);
     }catch (err) {
         console.log(err);
