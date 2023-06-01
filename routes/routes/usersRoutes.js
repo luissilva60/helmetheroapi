@@ -135,6 +135,22 @@ async function login(req, res) {
 
 }
 
+async function getLeaderboard(req, res) {
+    try {
+        const allUsers = await models.users.findAll({
+            include: models.roles,
+            order: [['user_points', 'DESC']]
+        });
+
+        console.log(allUsers);
+        res.status(200).json(allUsers);
+    } catch (err) {
+        console.log(err);
+        return { status: 500, data: err };
+    }
+}
+
+
 
 
 
@@ -147,5 +163,6 @@ module.exports = {
     update,
     remove,
     login,
+    getLeaderboard,
 
 };

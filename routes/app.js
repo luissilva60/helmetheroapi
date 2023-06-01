@@ -90,8 +90,12 @@ for (const [routeName, routeController] of Object.entries(routes)) {
         `/api/${routeName}/:id`,
         makeHandlerAwareOfAsyncErrors(routeController.getById)
     );
+  }if (routeController.getLeaderboard) {
+    app.get(
+        `/api/${routeName}/leaderboard/top`,
+        makeHandlerAwareOfAsyncErrors(routeController.getLeaderboard)
+    );
   }
-
 }
 
 

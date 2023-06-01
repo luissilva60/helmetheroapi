@@ -28,6 +28,9 @@ module.exports = (sequelize) => {
         user_gps: {
             type: DataTypes.GEOGRAPHY('POINT'),
             allowNull: true
+        },
+        user_points:{
+            type:DataTypes.INTEGER
         }
 
 
