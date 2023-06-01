@@ -41,7 +41,11 @@ async function update(req, res) {
 
     // We only accept an UPDATE request if the `:id` param matches the body `id`
     if (req.body.area_id === id) {
-        await models.area.update(req.body);
+        await models.area.update(req.body,{
+            where:{
+                area_id: id,
+            }
+        });
         res.status(200).end();
     } else {
         res.status(400).send(`Bad request: param ID (${id}) does not match body ID (${req.body.area_id}).`);

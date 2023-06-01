@@ -15,6 +15,9 @@ module.exports = (sequelize) => {
         trail_gps: {
             type: DataTypes.GEOMETRY
 
+        },
+        trail_points: {
+            type: DataTypes.INTEGER
         }
     });
 

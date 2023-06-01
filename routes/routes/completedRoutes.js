@@ -66,10 +66,29 @@ async function remove(req, res) {
 
 }
 
+async function getAllCompletedUser(req, res) {
+    const id = getIdParam(req);
+    try {
+        const allcompleted = await models.completed.findAll({
+            where:{
+                completed_user_id: id
+            },
+            include: [models.trails, models.checkpoints, models.challenges]
+        });
+        res.status(200).json(allcompleted);
+    }catch (err) {
+        console.log(err);
+        return { status: 500, data: err };
+    }
+
+}
+
+
 module.exports = {
     getAll,
     getById,
     create,
     update,
     remove,
+    getAllCompletedUser
 }
